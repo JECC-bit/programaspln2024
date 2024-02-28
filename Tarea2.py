@@ -1,4 +1,5 @@
 import os
+######### HOLA, AGREGUÉ ESTE COMENTARIO PARA ACTUALIZAR EL ARCHIVO.
 
 carpeta = "Programas\\"
 letras = []
