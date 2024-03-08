@@ -6,8 +6,9 @@ with open("..\\PLN\\Programas\\Documentos\\cuento.txt", "r") as archivo:
 
 tokens=nltk.word_tokenize(texto,"spanish")
 
-for token in tokens:
-    print(token)
+tokens_conjunto = set(tokens)
 
 palabras_total = len(tokens)
-print(palabras_total)
+palabras_diferentes = len(tokens_conjunto)
+riqueza = palabras_diferentes/palabras_total
+print(riqueza)
