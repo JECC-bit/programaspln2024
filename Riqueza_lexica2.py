@@ -6,7 +6,6 @@ def riqueza_lexica(tokens):
     palabras_totales=len(tokens)
     palabras_diferentes=len(tokens_conjunto)
     riqueza_lexica=palabras_diferentes/palabras_totales
-
     return riqueza_lexica
 
 carpeta_nombre="..\\PLN\\Programas\\Documentos\\"
@@ -17,3 +16,10 @@ with open(carpeta_nombre+archivo_nombre,"r") as archivo:
 tokens=nltk.word_tokenize(texto,"spanish")
 riqueza_lexica=riqueza_lexica(tokens)
 print(riqueza_lexica)
+
+# Conteo de palabras
+conteo_individual=tokens.count("el")
+print("\n",conteo_individual)
+palabras_totales=len(tokens)
+porcentaje=100*conteo_individual/palabras_totales
+print("%", porcentaje)
