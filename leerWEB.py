@@ -1,3 +1,4 @@
+import nltk
 import requests
 from bs4 import BeautifulSoup
 
@@ -19,5 +20,8 @@ if response.status_code == 200:
     # Imprimir el texto de cada párrafo
     for paragraph in paragraphs:
         print(paragraph.text)
+        tokens=nltk.word_tokenize(paragraph.text,"spanish")
+        riqueza_lexica=riqueza_lexica(tokens)
+    print("\n\n Riqueza léxica: ", riqueza_lexica*100,"%")
 else:
     print('Error al obtener la página:', response.status_code)
