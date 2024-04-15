@@ -2,6 +2,7 @@ import nltk
 import requests
 from bs4 import BeautifulSoup
 
+# Funcion para calcular la riqueza léxica
 def calcular_riqueza_lexica(tokens):
     tokens_conjunto = set(tokens)
     palabras_totales = len(tokens)
