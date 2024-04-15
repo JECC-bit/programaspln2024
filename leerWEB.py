@@ -10,8 +10,19 @@ def calcular_riqueza_lexica(tokens):
     riqueza_lexica = palabras_diferentes / palabras_totales
     return riqueza_lexica
 
-# URL de la página web que deseas analizar
-liga = input("Ingresa la URL de la página web a analizar: ")
+# Leer la URL de la página web que deseas analizar
+salida = False
+
+while salida == False:
+    pregunta = input("¿Desea ingresar una URL personalizada?(s/n) R = ")
+    if pregunta == "s":
+        liga = input("Ingresa la URL de la página web a analizar: ")
+        salida = True
+    elif pregunta == "n":
+        liga = 'https://archiveos.org/pelican/'
+        salida = True
+    else:
+        salida = False
 
 # Realizar la solicitud HTTP GET para obtener el contenido de la página
 respuesta = requests.get(liga)
