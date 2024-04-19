@@ -1,16 +1,20 @@
 import nltk
 import matplotlib.pyplot as plt
-from bs4 import BeautifulSoup
+import os
 from docx import Document
 
-# Leer el nombre del archivo .docx
+# Leer el nombre del archivo .docx y validar que exista
 salida = False
 
 while not salida:
     pregunta = input("¿Desea ingresar un documento personalizado? (s/n) R = ")
     if pregunta.lower() == "s":
         nombre_archivo = input("Ingresa el nombre del docx a analizar: ")
-        salida = True
+        # Validar si el archivo existe en la carpeta del programa
+        if os.path.exists(nombre_archivo):
+            salida = True
+        else:
+            print("El archivo '{}' no existe. Por favor, inténtalo de nuevo.".format(nombre_archivo))
     elif pregunta.lower() == "n":
         nombre_archivo = 'cuento.docx'
         salida = True
